@@ -5,8 +5,8 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import id.my.rizalanggoro.emasku.core.TokenManager
 import id.my.rizalanggoro.emasku.core.UiState
+import id.my.rizalanggoro.emasku.core.managers.TokenManager
 import id.my.rizalanggoro.emasku.core.toFailure
 import id.my.rizalanggoro.emasku.domain.Token
 import id.my.rizalanggoro.emasku.openapi.apis.AuthApi

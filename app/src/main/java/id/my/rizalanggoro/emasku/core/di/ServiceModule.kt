@@ -1,7 +1,7 @@
 package id.my.rizalanggoro.emasku.core.di
 
 import id.my.rizalanggoro.emasku.BuildConfig
-import id.my.rizalanggoro.emasku.core.TokenManager
+import id.my.rizalanggoro.emasku.core.managers.TokenManager
 import id.my.rizalanggoro.emasku.openapi.apis.AuthApi
 import id.my.rizalanggoro.emasku.openapi.apis.GeneralApi
 import id.my.rizalanggoro.emasku.openapi.apis.GoldApi

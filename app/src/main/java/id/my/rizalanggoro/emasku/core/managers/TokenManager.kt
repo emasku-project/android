@@ -1,4 +1,4 @@
-package id.my.rizalanggoro.emasku.core
+package id.my.rizalanggoro.emasku.core.managers
 
 import android.content.Context
 import androidx.core.content.edit
