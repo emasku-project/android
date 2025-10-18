@@ -106,7 +106,7 @@ fun SettingScreen() {
                     TextField(
                         value = taxStr,
                         onValueChange = {
-                            if (it.matches(Regex("^\\d*\\.?\\d*\$"))) {
+                            if (it.matches(Regex("^-?\\d*\\.?\\d*\$"))) {
                                 taxStr = it
                             }
                         },
