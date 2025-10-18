@@ -16,10 +16,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.automirrored.rounded.Logout
 import androidx.compose.material.icons.automirrored.rounded.TrendingUp
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Balance
+import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Tag
 import androidx.compose.material.icons.rounded.Update
 import androidx.compose.material3.Card
@@ -71,11 +71,11 @@ fun GoldsScreen() {
                 actions = {
                     IconButton(
                         onClick = {
-                            authManager.update(isAuthenticated = false)
+                            backStack.add(Routes.Setting)
                         }
                     ) {
                         Icon(
-                            Icons.AutoMirrored.Rounded.Logout,
+                            Icons.Rounded.Settings,
                             contentDescription = null
                         )
                     }

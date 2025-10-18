@@ -28,7 +28,7 @@ fun ComposeApplication() {
 
     val backStack = rememberNavBackStack(
         when (authManager.isAuthenticated) {
-            true -> Routes.Setting
+            true -> Routes.Golds
             else -> Routes.Auth
         }
     )
