@@ -111,4 +111,7 @@ dependencies {
     // navigation 3
     implementation(libs.androidx.navigation3.ui)
     implementation(libs.androidx.navigation3.runtime)
+
+    // charty
+    implementation(libs.charty)
 }

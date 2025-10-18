@@ -10,6 +10,7 @@ docs/GeneralApi.md
 docs/GetAllGoldsRes.md
 docs/GetGoldByIdRes.md
 docs/GetMarketSummaryRes.md
+docs/GetSettingsRes.md
 docs/GetSummaryRes.md
 docs/GoldApi.md
 docs/LoginReq.md
@@ -43,6 +44,7 @@ src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/DomainsGold.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/GetAllGoldsRes.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/GetGoldByIdRes.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/GetMarketSummaryRes.kt
+src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/GetSettingsRes.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/GetSummaryRes.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/LoginReq.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/LoginRes.kt

@@ -11,6 +11,7 @@ composeBom = "2024.09.00"
 nav3Core = "1.0.0-alpha10"
 lifecycleViewmodelNavigation3Android = "2.10.0-alpha04"
 kotlinSerialization = "2.1.21"
+charty = "2.1.0-beta03.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -32,6 +33,7 @@ androidx-navigation3-runtime = { module = "androidx.navigation3:navigation3-runt
 androidx-navigation3-ui = { module = "androidx.navigation3:navigation3-ui", version.ref = "nav3Core" }
 androidx-lifecycle-viewmodel-navigation3-android = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-navigation3-android", version.ref = "lifecycleViewmodelNavigation3Android" }
 
+charty = { module = "com.himanshoe:charty", version.ref = "charty" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

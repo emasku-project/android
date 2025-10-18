@@ -16,10 +16,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.itemsIndexed
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.automirrored.rounded.Logout
 import androidx.compose.material.icons.automirrored.rounded.TrendingUp
 import androidx.compose.material.icons.rounded.Add
 import androidx.compose.material.icons.rounded.Balance
-import androidx.compose.material.icons.rounded.Settings
 import androidx.compose.material.icons.rounded.Tag
 import androidx.compose.material.icons.rounded.Update
 import androidx.compose.material3.Card
@@ -46,9 +46,11 @@ import id.my.rizalanggoro.emasku.core.LocalNavBackStack
 import id.my.rizalanggoro.emasku.core.Routes
 import id.my.rizalanggoro.emasku.core.extensions.formatDateTime
 import id.my.rizalanggoro.emasku.core.isLoading
+import id.my.rizalanggoro.emasku.core.managers.AuthManager
 import id.my.rizalanggoro.emasku.core.onLoading
 import id.my.rizalanggoro.emasku.core.onSuccess
 import org.koin.androidx.compose.koinViewModel
+import org.koin.compose.koinInject
 import java.text.NumberFormat
 import java.util.Locale
 
@@ -56,6 +58,7 @@ import java.util.Locale
 @Composable
 fun GoldsScreen() {
     val viewModel = koinViewModel<GoldsViewModel>()
+    val authManager = koinInject<AuthManager>()
 
     val backStack = LocalNavBackStack.current
 
@@ -67,10 +70,12 @@ fun GoldsScreen() {
                 },
                 actions = {
                     IconButton(
-                        onClick = {}
+                        onClick = {
+                            authManager.update(isAuthenticated = false)
+                        }
                     ) {
                         Icon(
-                            Icons.Rounded.Settings,
+                            Icons.AutoMirrored.Rounded.Logout,
                             contentDescription = null
                         )
                     }
@@ -242,7 +247,12 @@ fun GoldsScreen() {
                             modifier = Modifier.padding(horizontal = 16.dp),
                             horizontalArrangement = Arrangement.spacedBy(8.dp)
                         ) {
-                            Card(modifier = Modifier.weight(1f)) {
+                            Card(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .clip(CardDefaults.shape)
+                                    .clickable {}
+                            ) {
                                 with(viewModel.marketSummaryState) {
                                     var goldPrice = 0.0
                                     var goldUpdate = "-"
@@ -293,7 +303,12 @@ fun GoldsScreen() {
                                     }
                                 }
                             }
-                            Card(modifier = Modifier.weight(1f)) {
+                            Card(
+                                modifier = Modifier
+                                    .weight(1f)
+                                    .clip(CardDefaults.shape)
+                                    .clickable {}
+                            ) {
                                 with(viewModel.marketSummaryState) {
                                     var dollarRate = 0.0
                                     var dollarUpdate = "-"

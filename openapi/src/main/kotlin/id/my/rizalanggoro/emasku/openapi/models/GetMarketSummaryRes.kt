@@ -25,9 +25,9 @@ import com.google.gson.annotations.SerializedName
  * @param dollarUpdatedAt 
  * @param globalXauPrice 
  * @param globalXauUpdatedAt 
+ * @param taxPercentage 
  * @param xauJewelryPriceGram 
  * @param xauPriceGram 
- * @param xauPriceOunce 
  */
 
 
@@ -45,14 +45,14 @@ data class GetMarketSummaryRes (
     @SerializedName("global_xau_updated_at")
     val globalXauUpdatedAt: kotlin.String? = null,
 
+    @SerializedName("tax_percentage")
+    val taxPercentage: java.math.BigDecimal? = null,
+
     @SerializedName("xau_jewelry_price_gram")
     val xauJewelryPriceGram: java.math.BigDecimal? = null,
 
     @SerializedName("xau_price_gram")
-    val xauPriceGram: java.math.BigDecimal? = null,
-
-    @SerializedName("xau_price_ounce")
-    val xauPriceOunce: java.math.BigDecimal? = null
+    val xauPriceGram: java.math.BigDecimal? = null
 
 ) {
 

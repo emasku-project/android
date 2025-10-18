@@ -17,6 +17,8 @@ import id.my.rizalanggoro.emasku.presentation.pages.auth.index.AuthScreen
 import id.my.rizalanggoro.emasku.presentation.pages.golds.create.CreateGoldScreen
 import id.my.rizalanggoro.emasku.presentation.pages.golds.detail.DetailGoldScreen
 import id.my.rizalanggoro.emasku.presentation.pages.golds.index.GoldsScreen
+import id.my.rizalanggoro.emasku.presentation.pages.market.detail.MarketDetailScreen
+import id.my.rizalanggoro.emasku.presentation.pages.setting.SettingScreen
 import id.my.rizalanggoro.emasku.ui.theme.EmaskuTheme
 import org.koin.compose.koinInject
 
@@ -26,7 +28,7 @@ fun ComposeApplication() {
 
     val backStack = rememberNavBackStack(
         when (authManager.isAuthenticated) {
-            true -> Routes.Golds
+            true -> Routes.Setting
             else -> Routes.Auth
         }
     )
@@ -56,6 +58,12 @@ fun ComposeApplication() {
                         entry<Routes.Golds> { GoldsScreen() }
                         entry<Routes.CreateGold> { CreateGoldScreen() }
                         entry<Routes.DetailGold> { DetailGoldScreen(key = it) }
+
+                        // market
+                        entry<Routes.MarketDetail> { MarketDetailScreen(key = it) }
+
+                        // setting
+                        entry<Routes.Setting> { SettingScreen() }
                     }
                 )
             }

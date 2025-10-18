@@ -16,6 +16,7 @@
 package id.my.rizalanggoro.emasku.openapi.apis
 
 import id.my.rizalanggoro.emasku.openapi.models.GetMarketSummaryRes
+import id.my.rizalanggoro.emasku.openapi.models.GetSettingsRes
 import id.my.rizalanggoro.emasku.openapi.models.GetSummaryRes
 
 import id.my.rizalanggoro.emasku.openapi.infrastructure.*
@@ -60,6 +61,39 @@ import java.text.DateFormat
             val localVariableConfig = RequestConfig<kotlin.Any?>(
             RequestMethod.GET,
             "/api/v1/general/market-summary",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            )
+
+            return request(
+            localVariableConfig,
+            localVariableBody,
+            localVariableAuthNames
+            ).wrap()
+            }
+
+        /**
+        * GET /api/v1/general/settings
+        * 
+        * 
+         * @return GetSettingsRes
+        */
+            @Suppress("UNCHECKED_CAST")
+        open suspend fun getSettings(): HttpResponse<GetSettingsRes> {
+
+            val localVariableAuthNames = listOf<String>()
+
+            val localVariableBody = 
+                    io.ktor.client.utils.EmptyContent
+
+            val localVariableQuery = mutableMapOf<String, List<String>>()
+
+            val localVariableHeaders = mutableMapOf<String, String>()
+
+            val localVariableConfig = RequestConfig<kotlin.Any?>(
+            RequestMethod.GET,
+            "/api/v1/general/settings",
             query = localVariableQuery,
             headers = localVariableHeaders,
             requiresAuthentication = false,

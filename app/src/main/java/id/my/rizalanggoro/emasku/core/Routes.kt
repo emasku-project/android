@@ -19,4 +19,14 @@ data object Routes {
     data class DetailGold(
         val goldId: Int
     ) : NavKey
+
+    // market
+    @Serializable
+    data class MarketDetail(
+        val marketType: Int,
+    ) : NavKey
+
+    // setting
+    @Serializable
+    data object Setting : NavKey
 }

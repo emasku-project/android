@@ -49,6 +49,7 @@ All URIs are relative to *http://localhost*
 | *AuthApi* | [**logout**](docs/AuthApi.md#logout) | **POST** /api/v1/auth/logout |  |
 | *AuthApi* | [**register**](docs/AuthApi.md#register) | **POST** /api/v1/auth/register |  |
 | *GeneralApi* | [**getMarketSummary**](docs/GeneralApi.md#getmarketsummary) | **GET** /api/v1/general/market-summary |  |
+| *GeneralApi* | [**getSettings**](docs/GeneralApi.md#getsettings) | **GET** /api/v1/general/settings |  |
 | *GeneralApi* | [**getSummary**](docs/GeneralApi.md#getsummary) | **GET** /api/v1/general/summary |  |
 | *GoldApi* | [**createGold**](docs/GoldApi.md#creategold) | **POST** /api/v1/golds |  |
 | *GoldApi* | [**deleteGoldById**](docs/GoldApi.md#deletegoldbyid) | **DELETE** /api/v1/golds/{gold_id} |  |
@@ -66,6 +67,7 @@ All URIs are relative to *http://localhost*
  - [id.my.rizalanggoro.emasku.openapi.models.GetAllGoldsRes](docs/GetAllGoldsRes.md)
  - [id.my.rizalanggoro.emasku.openapi.models.GetGoldByIdRes](docs/GetGoldByIdRes.md)
  - [id.my.rizalanggoro.emasku.openapi.models.GetMarketSummaryRes](docs/GetMarketSummaryRes.md)
+ - [id.my.rizalanggoro.emasku.openapi.models.GetSettingsRes](docs/GetSettingsRes.md)
  - [id.my.rizalanggoro.emasku.openapi.models.GetSummaryRes](docs/GetSummaryRes.md)
  - [id.my.rizalanggoro.emasku.openapi.models.LoginReq](docs/LoginReq.md)
  - [id.my.rizalanggoro.emasku.openapi.models.LoginRes](docs/LoginRes.md)
