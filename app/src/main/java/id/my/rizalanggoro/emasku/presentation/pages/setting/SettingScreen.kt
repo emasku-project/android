@@ -9,12 +9,15 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.rounded.ArrowBack
 import androidx.compose.material.icons.rounded.Check
+import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.FilledIconButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.SnackbarHost
+import androidx.compose.material3.SnackbarHostState
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TopAppBar
@@ -29,6 +32,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.dp
 import id.my.rizalanggoro.emasku.core.LocalNavBackStack
+import id.my.rizalanggoro.emasku.core.isLoading
+import id.my.rizalanggoro.emasku.core.onFailure
 import id.my.rizalanggoro.emasku.core.onSuccess
 import org.koin.androidx.compose.koinViewModel
 
@@ -38,20 +43,36 @@ fun SettingScreen() {
     val viewModel = koinViewModel<SettingViewModel>()
     val backStack = LocalNavBackStack.current
 
+    val snackbarHostState = remember { SnackbarHostState() }
+
     var taxStr by remember { mutableStateOf("") }
-    val tax = taxStr.toFloatOrNull() ?: 0.0
+    val tax = taxStr.toDoubleOrNull() ?: 0.0
 //    var correctionStr by remember { mutableStateOf("") }
 //    val correction = correctionStr.toFloatOrNull() ?: 0.0
 
-    LaunchedEffect(viewModel.settingsState) {
+    LaunchedEffect(viewModel.settingsState, viewModel.updateState) {
         with(viewModel) {
             settingsState.onSuccess {
-                taxStr = it.taxPercentage.toString()
+                if (taxStr.isEmpty())
+                    taxStr = it.taxPercentage.toString()
             }
+
+            updateState
+                .onSuccess {
+                    snackbarHostState.showSnackbar("Perubahan berhasil disimpan!")
+                    viewModel.resetUpdateState()
+                }
+                .onFailure {
+                    snackbarHostState.showSnackbar(it)
+                    viewModel.resetUpdateState()
+                }
         }
     }
 
     Scaffold(
+        snackbarHost = {
+            SnackbarHost(hostState = snackbarHostState)
+        },
         topBar = {
             TopAppBar(
                 navigationIcon = {
@@ -97,8 +118,15 @@ fun SettingScreen() {
                             .fillMaxWidth()
                             .weight(1f)
                     )
-                    FilledIconButton(onClick = {}) {
-                        Icon(Icons.Rounded.Check, contentDescription = null)
+                    with(viewModel) {
+                        when (updateState.isLoading()) {
+                            true -> CircularProgressIndicator()
+                            else -> FilledIconButton(onClick = {
+                                viewModel.updateTaxSetting(tax = tax)
+                            }) {
+                                Icon(Icons.Rounded.Check, contentDescription = null)
+                            }
+                        }
                     }
                 }
             }

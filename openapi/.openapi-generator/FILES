@@ -19,6 +19,8 @@ docs/LogoutRes.md
 docs/RegisterReq.md
 docs/RegisterRes.md
 docs/ResponsesGetAllGoldsItem.md
+docs/UpdateTaxSettingReq.md
+docs/UpdateTaxSettingRes.md
 gradle/wrapper/gradle-wrapper.jar
 gradle/wrapper/gradle-wrapper.properties
 gradlew
@@ -52,3 +54,5 @@ src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/LogoutRes.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/RegisterReq.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/RegisterRes.kt
 src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/ResponsesGetAllGoldsItem.kt
+src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/UpdateTaxSettingReq.kt
+src/main/kotlin/id/my/rizalanggoro/emasku/openapi/models/UpdateTaxSettingRes.kt

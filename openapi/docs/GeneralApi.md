@@ -7,6 +7,7 @@ All URIs are relative to *http://localhost*
 | [**getMarketSummary**](GeneralApi.md#getMarketSummary) | **GET** /api/v1/general/market-summary |  |
 | [**getSettings**](GeneralApi.md#getSettings) | **GET** /api/v1/general/settings |  |
 | [**getSummary**](GeneralApi.md#getSummary) | **GET** /api/v1/general/summary |  |
+| [**updateTaxSetting**](GeneralApi.md#updateTaxSetting) | **POST** /api/v1/general/settings/tax |  |
 
 
 <a id="getMarketSummary"></a>
@@ -122,6 +123,50 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**GetSummaryRes**](GetSummaryRes.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: */*
+
+<a id="updateTaxSetting"></a>
+# **updateTaxSetting**
+> UpdateTaxSettingRes updateTaxSetting(body)
+
+
+
+### Example
+```kotlin
+// Import classes:
+//import id.my.rizalanggoro.emasku.openapi.infrastructure.*
+//import id.my.rizalanggoro.emasku.openapi.models.*
+
+val apiInstance = GeneralApi()
+val body : UpdateTaxSettingReq =  // UpdateTaxSettingReq | body
+try {
+    val result : UpdateTaxSettingRes = apiInstance.updateTaxSetting(body)
+    println(result)
+} catch (e: ClientException) {
+    println("4xx response calling GeneralApi#updateTaxSetting")
+    e.printStackTrace()
+} catch (e: ServerException) {
+    println("5xx response calling GeneralApi#updateTaxSetting")
+    e.printStackTrace()
+}
+```
+
+### Parameters
+| Name | Type | Description  | Notes |
+| ------------- | ------------- | ------------- | ------------- |
+| **body** | [**UpdateTaxSettingReq**](UpdateTaxSettingReq.md)| body | |
+
+### Return type
+
+[**UpdateTaxSettingRes**](UpdateTaxSettingRes.md)
 
 ### Authorization
 

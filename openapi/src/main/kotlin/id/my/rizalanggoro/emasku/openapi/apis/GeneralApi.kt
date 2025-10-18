@@ -18,6 +18,8 @@ package id.my.rizalanggoro.emasku.openapi.apis
 import id.my.rizalanggoro.emasku.openapi.models.GetMarketSummaryRes
 import id.my.rizalanggoro.emasku.openapi.models.GetSettingsRes
 import id.my.rizalanggoro.emasku.openapi.models.GetSummaryRes
+import id.my.rizalanggoro.emasku.openapi.models.UpdateTaxSettingReq
+import id.my.rizalanggoro.emasku.openapi.models.UpdateTaxSettingRes
 
 import id.my.rizalanggoro.emasku.openapi.infrastructure.*
 import io.ktor.client.HttpClientConfig
@@ -133,6 +135,39 @@ import java.text.DateFormat
             )
 
             return request(
+            localVariableConfig,
+            localVariableBody,
+            localVariableAuthNames
+            ).wrap()
+            }
+
+        /**
+        * POST /api/v1/general/settings/tax
+        * 
+        * 
+         * @param body body 
+         * @return UpdateTaxSettingRes
+        */
+            @Suppress("UNCHECKED_CAST")
+        open suspend fun updateTaxSetting(body: UpdateTaxSettingReq): HttpResponse<UpdateTaxSettingRes> {
+
+            val localVariableAuthNames = listOf<String>()
+
+            val localVariableBody = body
+
+            val localVariableQuery = mutableMapOf<String, List<String>>()
+
+            val localVariableHeaders = mutableMapOf<String, String>()
+
+            val localVariableConfig = RequestConfig<kotlin.Any?>(
+            RequestMethod.POST,
+            "/api/v1/general/settings/tax",
+            query = localVariableQuery,
+            headers = localVariableHeaders,
+            requiresAuthentication = false,
+            )
+
+            return jsonRequest(
             localVariableConfig,
             localVariableBody,
             localVariableAuthNames

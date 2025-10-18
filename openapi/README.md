@@ -51,6 +51,7 @@ All URIs are relative to *http://localhost*
 | *GeneralApi* | [**getMarketSummary**](docs/GeneralApi.md#getmarketsummary) | **GET** /api/v1/general/market-summary |  |
 | *GeneralApi* | [**getSettings**](docs/GeneralApi.md#getsettings) | **GET** /api/v1/general/settings |  |
 | *GeneralApi* | [**getSummary**](docs/GeneralApi.md#getsummary) | **GET** /api/v1/general/summary |  |
+| *GeneralApi* | [**updateTaxSetting**](docs/GeneralApi.md#updatetaxsetting) | **POST** /api/v1/general/settings/tax |  |
 | *GoldApi* | [**createGold**](docs/GoldApi.md#creategold) | **POST** /api/v1/golds |  |
 | *GoldApi* | [**deleteGoldById**](docs/GoldApi.md#deletegoldbyid) | **DELETE** /api/v1/golds/{gold_id} |  |
 | *GoldApi* | [**getAllGolds**](docs/GoldApi.md#getallgolds) | **GET** /api/v1/golds |  |
@@ -75,6 +76,8 @@ All URIs are relative to *http://localhost*
  - [id.my.rizalanggoro.emasku.openapi.models.RegisterReq](docs/RegisterReq.md)
  - [id.my.rizalanggoro.emasku.openapi.models.RegisterRes](docs/RegisterRes.md)
  - [id.my.rizalanggoro.emasku.openapi.models.ResponsesGetAllGoldsItem](docs/ResponsesGetAllGoldsItem.md)
+ - [id.my.rizalanggoro.emasku.openapi.models.UpdateTaxSettingReq](docs/UpdateTaxSettingReq.md)
+ - [id.my.rizalanggoro.emasku.openapi.models.UpdateTaxSettingRes](docs/UpdateTaxSettingRes.md)
 
 
 <a id="documentation-for-authorization"></a>
